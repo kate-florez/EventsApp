@@ -5,8 +5,22 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>React Router Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   </head>
   <body>
     <div id="root"></div>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAB-zAjOMFvpyPxc1WDVdVLceBOtHF-Tac",
+        authDomain: "bday-app-37.firebaseapp.com",
+        databaseURL: "https://bday-app-37.firebaseio.com",
+        projectId: "bday-app-37",
+        storageBucket: "bday-app-37.appspot.com",
+        messagingSenderId: "244356319456"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>
