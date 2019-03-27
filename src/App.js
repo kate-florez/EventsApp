@@ -1,30 +1,35 @@
 import React, { Component } from "react";
-import { Route, NavLink, HashRouter } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Login from "./components/Account/Login/Login";
-import Events from "./components/Events/Events";
-import Contact from "./components/Contact/Contact";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import Navigation from './components/Navigation/Navigation';
+import HomePage from './components/Home/Home';
+import SignUpPage from './components/Account/Login/Login';
+import SignInPage from './components/Account/Login/Login';
+import PasswordForgetPage from './components/Account/Login/Login';
+import AccountPage from './components/Account/Login/Login';
+import EventsPage from "./components/Events/Events";
+import ContactPage from "./components/Contact/Contact";
+
+import * as ROUTES from './constants/routes';
 
 class Main extends Component {
   render() {
     return (
-      <HashRouter>
+      <Router>
         <div>
-          <h1>Bday Web App</h1>
-          <ul className="header">
-            <li><NavLink exact to="/">Home</NavLink></li>
-            <li><NavLink to="/login">Login</NavLink></li>
-            <li><NavLink to="/events">Events</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
-          </ul>
+          <h1>Events Web App</h1>
+          <Navigation />
           <div className="content">
-            <Route exact path="/" component={Home}/>
-            <Route path="/login" component={Login} />
-            <Route path="/events" component={Events}/>
-            <Route path="/contact" component={Contact}/>
+            <Route exact path={ROUTES.HOME} component={HomePage} />
+            <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+            <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+            <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+            <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+            <Route path={ROUTES.EVENTS} component={EventsPage} />
+            <Route path={ROUTES.CONTACT} component={ContactPage} />
           </div>
         </div>
-      </HashRouter>
+      </Router>
     );
   }
 }
