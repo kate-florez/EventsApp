@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import "./Login.css";
+import  { FirebaseContext } from '../../Firebase';
 
 class Login extends Component {
   constructor(props) {
@@ -34,6 +35,11 @@ class Login extends Component {
   render() {
     return (
       <div className="Login">
+        <FirebaseContext.Consumer>
+          {firebase => {
+            return <div>I've access to Firebase and render something.</div>;
+          }}
+        </FirebaseContext.Consumer>
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
             <FormLabel>Email</FormLabel>
