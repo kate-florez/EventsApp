@@ -7,12 +7,15 @@ import "./Navigation.css"
 
 const Navigation = () => (
   <div>
-    <ul class="header">
+    <ul className="header">
       <li>
         <NavLink to={ROUTES.HOME}>Home</NavLink>
       </li>
       <li>
         <NavLink to={ROUTES.SIGN_IN}>Sign In</NavLink>
+      </li>
+      <li>
+        <NavLink to={ROUTES.SIGN_UP}>Sign Up</NavLink>
       </li>
       <li>
         <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>

@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Navigation from './components/Navigation/Navigation';
 import HomePage from './components/Home/Home';
-import SignUpPage from './components/Account/Login/Login';
-import SignInPage from './components/Account/Login/Login';
-import PasswordForgetPage from './components/Account/Login/Login';
-import AccountPage from './components/Account/Login/Login';
+import SignUpPage from './components/Account/SignUp/SignUp';
+import SignInPage from './components/Account/SignUp/SignUp';
+import PasswordForgetPage from './components/Account/SignUp/SignUp';
+import AccountPage from './components/Account/SignUp/SignUp';
 import EventsPage from "./components/Events/Events";
 import ContactPage from "./components/Contact/Contact";
 
