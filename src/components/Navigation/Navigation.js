@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import SignOutButton from '../../components/Account/SignOut/SignOut';
 import * as ROUTES from '../../constants/routes';
 
 import "./Navigation.css"
@@ -25,6 +26,9 @@ const Navigation = () => (
       </li>
       <li>
         <NavLink to={ROUTES.CONTACT}>Contact</NavLink>
+      </li>
+      <li>
+        <SignOutButton />
       </li>
     </ul>
   </div>
