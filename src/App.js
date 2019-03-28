@@ -11,14 +11,36 @@ import EventsPage from "./components/Events/Events";
 import ContactPage from "./components/Contact/Contact";
 
 import * as ROUTES from './constants/routes';
+import { withFirebase } from './components/Firebase';
 
-class Main extends Component {
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authUser: null,
+    };
+  }
+
+  componentDidMount() {
+    this.listener = this.props.firebase.auth.onAuthStateChanged(
+      authUser => {
+        authUser
+          ? this.setState({ authUser })
+          : this.setState({ authUser: null });
+    });
+  }
+
+  componentWillUnmount() {
+    this.listener();
+  }
+
   render() {
     return (
       <Router>
         <div>
           <h1>Events Web App</h1>
-          <Navigation />
+          <Navigation authUser={this.state.authUser} />
           <div className="content">
             <Route exact path={ROUTES.HOME} component={HomePage} />
             <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
@@ -34,4 +56,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withFirebase(App);
