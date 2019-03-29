@@ -1,0 +1,41 @@
+h3 {
+  margin: 0 0 10px 0;
+  color: #039BE5;
+}
+
+p {
+  margin: 0;
+}
+
+.event {
+  display: flex;
+  border-radius: 3px;
+  border: 1px solid rgba(59,33,81,0.1);
+  box-shadow: 0 5px 4px -4px rgba(59,33,81,0.21);
+  margin: 15px 0;
+}
+
+.event-picture {
+  width: 30%;
+}
+
+.event-image {
+  max-width: 100%;
+}
+
+.event-info-container {
+  display: flex;
+  align-items: baseline;
+  flex-grow: 1;
+  padding: 0 0 2% 5%;
+}
+
+.event-info {
+  flex-grow: 1;
+  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #ECEFF1;
+}
+
+.event-info p {
+  color: #8AA1AC;
+}

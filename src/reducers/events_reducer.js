@@ -1,7 +1,10 @@
 export default function eventsReducer(state = [
-  { name: 'test 1 name', date: 'test 1 date' },
-  { name: 'test 2 name', date: 'test 2 date' },
-  { name: 'test 3 name', date: 'test 3 date' },
+  { 
+    name: 'Andrews Birthday Fest!', 
+    date: 'April 14, 2019',
+    img: '',
+    address: '124 Awesome Street, Cool Town, NJ, 07676'
+  },
 ], action) {
   switch(action.type) {
     default:
