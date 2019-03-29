@@ -39,3 +39,10 @@ p {
 .event-info p {
   color: #8AA1AC;
 }
+
+.date-sticker {
+  text-align: center;
+  width: 75px;
+  background-color: #F06292;
+  color: #FFF;
+}
