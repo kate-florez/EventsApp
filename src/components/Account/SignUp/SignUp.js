@@ -66,7 +66,7 @@ class SignUpFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <FormGroup controlId="userName" bsSize="large">
+        <FormGroup controlId="userName">
           <FormLabel>User Name</FormLabel>
           <FormControl
             autoFocus
@@ -77,7 +77,7 @@ class SignUpFormBase extends Component {
             placeholder="Full Name"
           />
         </FormGroup>
-        <FormGroup controlId="email" bsSize="large">
+        <FormGroup controlId="email">
           <FormLabel>Email</FormLabel>
           <FormControl
             name="email"
@@ -87,7 +87,7 @@ class SignUpFormBase extends Component {
             placeholder="Email Address"
           />
         </FormGroup>
-        <FormGroup controlId="passwordOne" bsSize="large">
+        <FormGroup controlId="passwordOne">
           <FormLabel>passwordOne</FormLabel>
           <FormControl
             name="passwordOne"
@@ -97,7 +97,7 @@ class SignUpFormBase extends Component {
             placeholder="Password"
           />
         </FormGroup>
-        <FormGroup controlId="passwordTwo" bsSize="large">
+        <FormGroup controlId="passwordTwo">
           <FormLabel>passwordTwo</FormLabel>
           <FormControl
             name="passwordTwo"
@@ -109,7 +109,6 @@ class SignUpFormBase extends Component {
         </FormGroup>
         <Button
           block
-          bsSize="large"
           type="submit"
           disabled={isInvalid}>
           Sign Up

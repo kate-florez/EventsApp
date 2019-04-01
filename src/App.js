@@ -5,8 +5,8 @@ import Navigation from './components/Navigation/Navigation';
 import HomePage from './components/Home/Home';
 import SignUpPage from './components/Account/SignUp/SignUp';
 import SignInPage from './components/Account/SignIn/SignIn';
-import PasswordForgetPage from './components/Account/SignUp/SignUp';
-import AccountPage from './components/Account/SignUp/SignUp';
+import PasswordForgetPage from './components/Account/PasswordForget/PasswordForget';
+import AccountPage from './components/Account/Account';
 import EventsPage from "./components/Events/Events";
 import ContactPage from "./components/Contact/Contact";
 
