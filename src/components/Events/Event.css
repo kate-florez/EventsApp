@@ -21,13 +21,16 @@ p {
 
 .event-image {
   max-width: 100%;
+  border-radius: 3px 0 0 3px;
 }
 
 .event-info-container {
-  display: flex;
-  align-items: baseline;
   flex-grow: 1;
   padding: 0 0 2% 5%;
+}
+
+.event-header {
+  display: flex;
 }
 
 .event-info {
@@ -36,7 +39,8 @@ p {
   border-bottom: 1px solid #ECEFF1;
 }
 
-.event-info p {
+.event-info p, 
+.guests {
   color: #8AA1AC;
 }
 
@@ -45,4 +49,27 @@ p {
   width: 75px;
   background-color: #F06292;
   color: #FFF;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.day {
+  font-size: 25px;
+}
+
+.event-message {
+  padding: 5% 0 7%;
+}
+
+.rsvp {
+  font-weight: bold;
+}
+
+.attendance {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5%;
 }

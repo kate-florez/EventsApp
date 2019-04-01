@@ -34,13 +34,28 @@ class Event extends Component {
           <img className="event-image" src={image} alt={`${name}`} />
         </div>
         <div className="event-info-container">
-          <div className="event-info">
-            <h3>{name}</h3>
-            <p>{date} &bull; {address}</p>
+          <div className="event-header">
+            <div className="event-info">
+              <h3>{name}</h3>
+              <p>{date} &bull; {address}</p>
+            </div>
+            <div className="date-sticker">
+              <div className="month">{this.formatDateStickerMonth(date)}</div>
+              <div className="day">{this.formatDateStickerDay(date)}</div>
+            </div>
           </div>
-          <div className="date-sticker">
-            <div className="month">{this.formatDateStickerMonth(date)}</div>
-            <div className="day">{this.formatDateStickerDay(date)}</div>
+
+          <div className="event-message">
+            You’re invited to Andrew’s Birthday Fest! on April 14, 2019.
+          </div>
+
+          <div className="attendance">
+            <div className="rsvp">
+              RSVP
+            </div>
+            <div className="guests">
+              You + 14 Guests are attending this event.
+            </div>
           </div>
         </div>
       </div> 
