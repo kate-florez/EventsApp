@@ -2,24 +2,27 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import * as actions from '../../actions/eventsActions';
 import { bindActionCreators } from 'redux';
+
+import Event from './Event';
  
 class Events extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      horizontal: true
+    };
+  }
+  
   componentDidMount() {
     this.props.actions.fetchEvents();
   }
 
   render() {
-    const events = this.props.events.map(event => 
-      <div>
-        <div>{event.name}</div>
-        <div>{event.date}</div>
-      </div>  
-    );
-
+    const events = this.props.events.map((event, index) => <Event key={index} event={event} />);
     return (
       <div>
-        <h2>Events</h2>
-        <p>Upcoming events are:</p>
+        <h2>{events.length} Upcoming Events:</h2>
         {events}
       </div>
     );
