@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 import "./Event.css";
 import image from "../../images/test-image.jpg";
@@ -51,7 +52,8 @@ class Event extends Component {
 
           <div className="attendance">
             <div className="rsvp">
-              RSVP
+              <CheckCircleIcon /> 
+              <span>RSVP</span>
             </div>
             <div className="guests">
               You + 14 Guests are attending this event.

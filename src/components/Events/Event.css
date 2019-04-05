@@ -1,10 +1,17 @@
 h3 {
   margin: 0 0 10px 0;
   color: #039BE5;
+  text-transform: uppercase;
 }
 
 p {
   margin: 0;
+}
+
+svg {
+  vertical-align: middle;
+  padding-bottom: 3px;
+  color: #2AC670;
 }
 
 .event {
