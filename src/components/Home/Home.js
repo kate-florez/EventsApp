@@ -1,14 +1,18 @@
 import React, { Component } from "react";
+
+import { withAuthorization } from '../Session';
  
 class Home extends Component {
   render() {
     return (
       <div>
         <h2>Welcome</h2>
-        <p>Welcome text</p>
+        <p>The Home Page is accessible by every signed in user.</p>
       </div>
     );
   }
 }
  
-export default Home;
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(Home);
