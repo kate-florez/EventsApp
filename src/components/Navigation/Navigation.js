@@ -32,6 +32,9 @@ const NavigationAuth = () => (
       <NavLink to={ROUTES.ACCOUNT}>Account</NavLink>
     </li>
     <li>
+      <NavLink to={ROUTES.ADMIN}>Admin</NavLink>
+    </li>
+    <li>
       <NavLink to={ROUTES.EVENTS}>Events</NavLink>
     </li>
     <li>
