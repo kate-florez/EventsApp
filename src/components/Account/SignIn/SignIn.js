@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import { SignUpLink } from '../SignUp/SignUp';
+import { PasswordForgetLink } from '../PasswordForget/PasswordForget';
 import { withFirebase } from '../../Firebase';
 import * as ROUTES from '../../../constants/routes';
 
@@ -11,6 +12,7 @@ const SignInPage = () => (
   <div>
     <h1>SignIn</h1>
     <SignInForm />
+    <PasswordForgetLink />
     <SignUpLink />
   </div>
 );
@@ -55,7 +57,7 @@ class SignInFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <FormGroup controlId="email" bsSize="large">
+        <FormGroup controlId="email">
           <FormLabel>Email</FormLabel>
           <FormControl
             autoFocus
@@ -66,7 +68,7 @@ class SignInFormBase extends Component {
             placeholder="Email Address"
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
+        <FormGroup controlId="password">
           <FormLabel>Password</FormLabel>
           <FormControl
             name="password"
@@ -78,7 +80,6 @@ class SignInFormBase extends Component {
         </FormGroup>
         <Button 
           block
-          bsSize="large"
           disabled={isInvalid} 
           type="submit">
           Sign In
