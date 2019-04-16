@@ -2,6 +2,16 @@
 	background: url(../../images/hero-bkg.jpg) no-repeat;
 }
 
+.upper {
+	display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.upper img {
+	padding: 1.2% 1.2% 1.2% 4.2%;
+}
+
 ul.header li {
 	list-style-type: none;
 	margin: 0;
