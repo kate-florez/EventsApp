@@ -1,18 +1,39 @@
+.main-nav {
+	background: url(../../images/hero-bkg.jpg) no-repeat;
+}
+
+.upper {
+	display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.upper img {
+	padding: 1.2% 1.2% 1.2% 4.2%;
+}
+
 ul.header li {
-	display: inline;
 	list-style-type: none;
 	margin: 0;
 }
 
 ul.header {
-	background-color: #111;
-	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 10px;
 }
 
 ul.header li a {
 	color: #FFF;
-	font-weight: bold;
 	text-decoration: none;
 	padding: 20px;
 	display: inline-block;
+}
+
+h1.current-page {
+	color: #fff;
+	font-weight: bold;
+	padding: 25px 60px 90px;
+	letter-spacing: 1.5px;
 }

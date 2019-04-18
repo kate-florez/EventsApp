@@ -17,7 +17,6 @@ import { withAuthentication } from './components/Session';
 const App = () => (
   <Router>
     <div>
-      <h1>Events Web App</h1>
       <Navigation />
       <div className="content">
         <Route exact path={ROUTES.HOME} component={HomePage} />
