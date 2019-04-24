@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 import { SignUpLink } from '../SignUp/SignUp';
 import { PasswordForgetLink } from '../PasswordForget/PasswordForget';
 import { withFirebase } from '../../Firebase';
 import * as ROUTES from '../../../constants/routes';
 
+import "./SignIn.css";
+import logo from "../../../images/logo-color.png";
+
 const SignInPage = () => (
-  <div>
-    <h1>SignIn</h1>
-    <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
+  <div className="wrapper">
+    <div className="wrapper-signin">
+      <img className="logo" src={logo} alt="events-logo" />
+      <h1 className="title">Sign In</h1>
+      <SignInForm />
+      <PasswordForgetLink />
+      <hr/>
+      <SignUpLink />
+    </div>
   </div>
 );
 
@@ -37,7 +45,7 @@ class SignInFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.EVENTS);
       })
       .catch(error => {
         this.setState({ error });
@@ -51,37 +59,48 @@ class SignInFormBase extends Component {
   };
 
   render() {
+
     const { email, password, error } = this.state;
 
     const isInvalid = password === '' || email === '';
 
     return (
       <form onSubmit={this.onSubmit}>
-        <FormGroup controlId="email">
-          <FormLabel>Email</FormLabel>
-          <FormControl
-            autoFocus
-            name="email"
-            value={email}
-            onChange={this.onChange}
-            type="text"
-            placeholder="Email Address"
-          />
-        </FormGroup>
-        <FormGroup controlId="password">
-          <FormLabel>Password</FormLabel>
-          <FormControl
-            name="password"
-            value={password}
-            onChange={this.onChange}
-            type="password"
-            placeholder="Password"
-          />
-        </FormGroup>
+        <TextField
+          id="filled-email-input"
+          className="textField"
+          label="Email"
+          name="email"
+          value={email}
+          onChange={this.onChange}
+          type="email"
+          placeholder="Email Address"
+          autoComplete="email"
+          margin="normal"
+          variant="filled"
+          autoFocus
+          fullWidth />
+        <TextField
+          id="filled-password-input"
+          className="textField"
+          label="Password"
+          name="password"
+          value={password}
+          onChange={this.onChange}
+          type="password"
+          placeholder="Password"
+          autoComplete="email"
+          margin="normal"
+          variant="filled"
+          fullWidth />
         <Button 
+          className="signinButton"
+          variant="contained" 
+          color="primary"
           block
           disabled={isInvalid} 
-          type="submit">
+          type="submit"
+          fullWidth>
           Sign In
         </Button>
 
