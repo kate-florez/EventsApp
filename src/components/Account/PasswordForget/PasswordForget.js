@@ -8,9 +8,11 @@ import * as ROUTES from '../../../constants/routes';
 import './PasswordForget.css';
 
 const PasswordForgetPage = () => (
-  <div>
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
+  <div className="wrapper">
+    <div className="wrapper-signin">
+      <h1>Forgot Password</h1>
+      <PasswordForgetForm />
+    </div>
   </div>
 );
 
