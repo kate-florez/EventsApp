@@ -18,6 +18,7 @@ class Navigation extends Component {
   }
 
   onNavClick = event => {
+    console.log('event.target.innerHTML', event.target.innerHTML);
     this.setState({ page: event.target.innerHTML });
   }
 
@@ -27,7 +28,7 @@ class Navigation extends Component {
       <div>
         <AuthUserContext.Consumer>
           {authUser =>
-            authUser ? <NavigationAuth onNavClick={this.onNavClick} page={page} /> : <NavigationNonAuth onNavClick={this.onNavClick} page={page} />
+            authUser ? <NavigationAuth onNavClick={this.onNavClick} page={page} /> : null
           }
         </AuthUserContext.Consumer>
       </div>
@@ -42,12 +43,6 @@ const NavigationAuth = (props) => (
       <ul className="header">
         <li>
           <NavLink onClick={props.onNavClick} to={ROUTES.HOME}>Home</NavLink>
-        </li>
-        <li>
-          <NavLink onClick={props.onNavClick} to={ROUTES.SIGN_IN}>Sign In</NavLink>
-        </li>
-        <li>
-          <NavLink onClick={props.onNavClick} to={ROUTES.SIGN_UP}>Sign Up</NavLink>
         </li>
         <li>
           <NavLink onClick={props.onNavClick} to={ROUTES.ACCOUNT}>Account</NavLink>
@@ -72,11 +67,11 @@ const NavigationAuth = (props) => (
 
 const NavigationNonAuth = (props) => (
   <div className="main-nav">
-    <ul className="header">
+    {/* <ul className="header">
       <li>
         <NavLink onClick={props.onNavClick} to={ROUTES.SIGN_IN}>Sign In</NavLink>
       </li>
-    </ul>
+    </ul> */}
     <h1 className="current-page">{props.page}</h1>
   </div>
 );
