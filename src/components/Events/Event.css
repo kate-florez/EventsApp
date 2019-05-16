@@ -23,17 +23,13 @@ svg {
 }
 
 .event-picture {
-  width: 30%;
+  background-image: url(../../images/thumbnail.jpg);  
+  background-size: cover;
+  position: relative;
 }
 
 .event-image {
   max-width: 100%;
-  border-radius: 3px 0 0 3px;
-}
-
-.event-info-container {
-  flex-grow: 1;
-  padding: 0 0 2% 5%;
 }
 
 .event-header {
@@ -80,3 +76,57 @@ svg {
   justify-content: space-between;
   padding-right: 5%;
 }
+
+/** LIST LAYOUT **/
+
+.event.list {
+  flex-direction: row;
+}
+
+.event.list .event-picture {
+  width: 30%;
+}
+
+.event.list .event-image {
+  border-radius: 3px 0 0 3px;
+}
+
+.event.list .event-info-container {
+  flex-grow: 1;
+  padding: 0 0 2% 5%;
+}
+
+.date-sticker.grid.list {
+  display: none;
+}
+
+/** GRID LAYOUT **/
+
+.event.grid {
+  flex-direction: column;
+  width: 30%;
+  flex-basis: 30%;
+}
+
+.event.grid .event-picture {
+  height: 175px;
+}
+
+.event.grid .event-image {
+  border-radius: 3px;
+}
+
+.date-sticker.grid.grid {
+  float: right;
+  height: 77px;
+}
+
+.date-sticker.list.grid {
+  display: none;
+}
+
+.event.grid .event-info-container {
+  padding: 3%;
+}
+
+

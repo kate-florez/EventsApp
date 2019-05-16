@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 
 import "./Event.css";
-import image from "../../images/test-image.jpg";
+import image from "../../images/thumbnail.jpg";
  
 class Event extends Component {
   constructor(props) {
@@ -15,7 +15,6 @@ class Event extends Component {
   formatDateStickerMonth(date) {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     date = date.split(' ');
-    console.log(date);
     let day = date.find(d => months.indexOf(d.substr(0, 3).toUpperCase()));
     day = day.substr(0, 3).toUpperCase();
     return months[months.indexOf(day)];
@@ -28,11 +27,15 @@ class Event extends Component {
   }
 
   render() {
-    const { name, date, address } = this.props.event;
+    const { event, layout } = this.props;
+    const { name, date, address } = event;
     return (
-      <div className="event"> 
+      <div className={`event ${layout}`}> 
         <div className="event-picture">
-          <img className="event-image" src={image} alt={`${name}`} />
+          <div className={`date-sticker grid ${layout}`}>
+            <div className="month">{this.formatDateStickerMonth(date)}</div>
+            <div className="day">{this.formatDateStickerDay(date)}</div>
+          </div>
         </div>
         <div className="event-info-container">
           <div className="event-header">
@@ -40,14 +43,14 @@ class Event extends Component {
               <h3>{name}</h3>
               <p>{date} &bull; {address}</p>
             </div>
-            <div className="date-sticker">
+            <div className={`date-sticker list ${layout}`}>
               <div className="month">{this.formatDateStickerMonth(date)}</div>
               <div className="day">{this.formatDateStickerDay(date)}</div>
             </div>
           </div>
 
           <div className="event-message">
-            You’re invited to Andrew’s Birthday Fest! on April 14, 2019.
+            You’re invited to {name} on April 14, 2019.
           </div>
 
           <div className="attendance">
