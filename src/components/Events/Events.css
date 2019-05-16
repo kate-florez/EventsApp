@@ -1,0 +1,44 @@
+.events-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.all-events {
+  display: flex;
+}
+
+.all-events.list {
+  flex-direction: column;
+}
+
+.all-events.grid {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.display-icons {
+  display: flex;
+}
+
+.display-icons svg {
+  display: flex;
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.list-icon.list svg {
+  color: #039BE5;
+}
+
+.list-icon.grid svg {
+  color: #9b9b9b;
+}
+
+.grid-icon.list svg {
+  color: #9b9b9b;
+}
+
+.grid-icon.grid svg {
+  color: #039BE5;
+}
