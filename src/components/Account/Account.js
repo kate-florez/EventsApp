@@ -11,18 +11,35 @@ import { AuthUserContext, withAuthorization } from '../Session';
 import { PasswordForgetForm } from './PasswordForget/PasswordForget';
 import PasswordChangeForm from './PasswordChange/PasswordChange';
 
-const AccountPage = () => (
-  <AuthUserContext.Consumer>
-    {authUser => (
-      <div>
-        <h1>Account: {authUser.email}</h1>
-        <SimpleTabs />
-        <PasswordForgetForm />
-        <PasswordChangeForm />
-      </div>
-    )}
-  </AuthUserContext.Consumer>
-);
+const styles = (theme) => {
+  return (
+    {
+      root: {
+        flexGrow: 1,
+        backgroundColor: theme.palette.background,
+      },
+      rootPath: {
+        color: '#000',
+      }
+    }
+  );
+}
+
+const AccountPage = (props) => {
+  console.log('props are', props);
+  return( 
+    <AuthUserContext.Consumer>
+      {authUser => (
+        <div>
+          <h1>Account: {authUser.email}</h1>
+          <SimpleTabs classes={props.classes} />
+          <PasswordForgetForm />
+          <PasswordChangeForm />
+        </div>
+      )}
+    </AuthUserContext.Consumer>
+  );
+}
 
 function TabContainer(props) {
   return (
@@ -36,12 +53,6 @@ TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-  },
-});
 
 class SimpleTabs extends React.Component {
   state = {
@@ -53,14 +64,24 @@ class SimpleTabs extends React.Component {
   };
 
   render() {
+    // const classes = styles();
     const { classes } = this.props;
+    console.log('classes', classes);
     const { value } = this.state;
 
     return (
       <div className={classes.root}>
         <AppBar position="static">
-          <Tabs value={value} onChange={this.handleChange}>
-            <Tab label="Item One" />
+          <Tabs
+            classes={{
+              root: classes.rootPath,
+            }}
+            value={value}
+            onChange={this.handleChange}
+          >
+            <Tab label="Item One">
+              sfsdfsdf
+            </Tab>
             <Tab label="Item Two" />
             <Tab label="Item Three" />
           </Tabs>
@@ -82,7 +103,7 @@ const condition = authUser => !!authUser;
 
 const Account = compose(
   withAuthorization(condition),
-  withStyles(styles),
+  withStyles(styles, {withTheme: true}),
 )(AccountPage);
 
 export default Account;
